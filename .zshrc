@@ -102,6 +102,6 @@ source $ZSH/oh-my-zsh.sh
 
 export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 
-alias normAll='norminette ex*/*'
+alias norminette="clear && norminette | awk '{gsub(/OK/,\"\033[1;32mOK\033[0m\");}1' | awk '{gsub(/Error/,\"\033[1;31mError\033[0m\");}1'"
 alias gcw='gcc -Wall -Werror -Wextra'
 alias ccw='cc -Wall -Werror -Wextra'
